@@ -8,7 +8,8 @@ that can be easily created via expressions and passed around like any other obje
 
 ## Data Types
 
-- Number: used for all number values (integer and floating point) except for very big integers.
+- ### Number: used for all number values (integer and floating point) except for very big integers.
+
   (It is an IEEE 754 64-bit double-precision floating point value)
 
   - Number literals can also have prefixes to indicate the base (binary, octal, decimal, or hexadecimal), or an exponent suffix.
@@ -42,12 +43,14 @@ that can be easily created via expressions and passed around like any other obje
     NaN is contagious: if you provide it as an operand to any mathematical operation, the result will also be NaN.
     NaN is the only value in JavaScript that's not equal to itself (per IEEE 754 specification).
 
-  - BigInt: used for arbitrarily large integers.
-    The BigInt type is an arbitrary length integer.
-    Its behavior is similar to C's integer types (e.g. division truncates to zero), eg. -3n / 2n = -1n
-    except it can grow indefinitely. BigInts are specified with a number literal and an n suffix.
+- ### BigInt: used for arbitrarily large integers.
 
-- String: used to store text.
+  The BigInt type is an arbitrary length integer.
+  Its behavior is similar to C's integer types (e.g. division truncates to zero), eg. -3n / 2n = -1n
+  except it can grow indefinitely. BigInts are specified with a number literal and an n suffix.
+
+- ### String: used to store text.
+
   Strings in JavaScript are sequences of Unicode characters. They're UTF-16 encoded
   Note - JavaScript does not have the distinction between characters and strings.
   If you want to represent a single character, you just use a string consisting of that single character.
@@ -82,11 +85,11 @@ that can be easily created via expressions and passed around like any other obje
 
 Everything else is known as an Object. Common object types include:
 
-- Function
-- Array
-- Date
-- RegExp
-- Error
+- ### Function
+- ### Array
+- ### Date
+- ### RegExp
+- ### Error
 
 Notes - Functions aren't special data structures in JavaScript — they are just a special type of object that can be called.
 
@@ -94,11 +97,14 @@ Notes - Functions aren't special data structures in JavaScript — they are just
 
 Variables in JavaScript are declared using one of three keywords: let, const, or var.
 
-let - Block Scoped
-const - cannot be reassigned values, Block scoped
-var - Global scope, discouraged in modern javascript. var keyword can redeclare a variable
+### let - Block Scoped
 
-Note about const:
+### const - cannot be reassigned values, Block scoped
+
+### var - Global scope, discouraged in modern javascript. var keyword can redeclare a variable
+
+### Note about const:
+
 const declarations only prevent reassignments — they don't prevent mutations of the variable's value, if it's an object.
 e.g. ->
 
@@ -108,7 +114,8 @@ obj.a = 1; // no error
 console.log(obj); // { a: 1 }
 ```
 
-Note about variables:
+### Note about variables:
+
 If you declare a variable without assigning any value to it, its value is undefined.
 You can't declare a const variable without an initializer, because you can't change it later anyway.
 
