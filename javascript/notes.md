@@ -152,7 +152,7 @@ If you add a string to a number (or other value) everything is converted into a 
 3 + 4 + "5"; // "75"
 ```
 
-### comparisons
+### Comparisons
 
 Comparisons in JavaScript can be made using <, >, <= and >=, which work for both strings and numbers.
 For equality, the double-equals operator performs type coercion if you give it different types, with sometimes interesting results.
