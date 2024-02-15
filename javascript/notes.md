@@ -60,13 +60,13 @@ that can be easily created via expressions and passed around like any other obje
   console.log("你好，世界！"); // Nearly all Unicode characters can be written literally in string literals
   ```
 
-- Boolean: true and false — usually used for conditional logic.
+- ### Boolean: true and false — usually used for conditional logic.
 
 ## Other types
 
-- Symbol: used for creating unique identifiers that won't collide.
-- Undefined: indicating that a variable has not been assigned a value.
-- Null: indicating a deliberate non-value.
+- ### Symbol: used for creating unique identifiers that won't collide.
+- ### Undefined: indicating that a variable has not been assigned a value.
+- ### Null: indicating a deliberate non-value.
 
   JavaScript distinguishes between null, which indicates a deliberate non-value (and is only accessible through the null keyword),
   and undefined, which indicates absence of value. There are many ways to obtain undefined:
