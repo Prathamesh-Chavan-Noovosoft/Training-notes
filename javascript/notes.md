@@ -12,33 +12,37 @@ that can be easily created via expressions and passed around like any other obje
   (It is an IEEE 754 64-bit double-precision floating point value)
 
   Number literals can also have prefixes to indicate the base (binary, octal, decimal, or hexadecimal), or an exponent suffix.
-  `
+
+```
 console.log(0b111110111); // 503
 console.log(0o767); // 503
 console.log(0x1f7); // 503
-console.log(5.03e2); // 503`
+console.log(5.03e2); // 503
+```
 
-  The standard arithmetic operators are supported, including addition, subtraction, remainder arithmetic, etc.
-  BigInts and numbers cannot be mixed in arithmetic operations.
+The standard arithmetic operators are supported, including addition, subtraction, remainder arithmetic, etc.
+BigInts and numbers cannot be mixed in arithmetic operations.
 
-  The Math object provides standard mathematical functions and constants.
-  `
+The Math object provides standard mathematical functions and constants.
+
+```
 Math.sin(3.5);
-const circumference = 2 * Math.PI * r;`
+const circumference = 2 * Math.PI * r;
+```
 
-  There are three ways to convert a string to a number:
+There are three ways to convert a string to a number:
 
-  parseInt(), which parses the string for an integer.
-  parseFloat(), which parses the string for a floating-point number.
-  The Number() function, which parses a string as if it's a number literal and supports many different number representations.
-  You can also use the unary plus + as a shorthand for Number().
+parseInt(), which parses the string for an integer.
+parseFloat(), which parses the string for a floating-point number.
+The Number() function, which parses a string as if it's a number literal and supports many different number representations.
+You can also use the unary plus + as a shorthand for Number().
 
-  Number values also include NaN (short for "Not a Number") and Infinity.
-  Many "invalid math" operations will return NaN — for example, if attempting to parse a non-numeric string,
-  or using Math.log() on a negative value. Division by zero produces Infinity (positive or negative).
+Number values also include NaN (short for "Not a Number") and Infinity.
+Many "invalid math" operations will return NaN — for example, if attempting to parse a non-numeric string,
+or using Math.log() on a negative value. Division by zero produces Infinity (positive or negative).
 
-  NaN is contagious: if you provide it as an operand to any mathematical operation, the result will also be NaN.
-  NaN is the only value in JavaScript that's not equal to itself (per IEEE 754 specification).
+NaN is contagious: if you provide it as an operand to any mathematical operation, the result will also be NaN.
+NaN is the only value in JavaScript that's not equal to itself (per IEEE 754 specification).
 
 - BigInt: used for arbitrarily large integers.
   The BigInt type is an arbitrary length integer.
@@ -49,9 +53,11 @@ const circumference = 2 * Math.PI * r;`
   Strings in JavaScript are sequences of Unicode characters. They're UTF-16 encoded
   Note - JavaScript does not have the distinction between characters and strings.
   If you want to represent a single character, you just use a string consisting of that single character.
-  `
+
+```
 console.log("Hello, world");
-console.log("你好，世界！"); // Nearly all Unicode characters can be written literally in string literals`
+console.log("你好，世界！"); // Nearly all Unicode characters can be written literally in string literals
+```
 
 - Boolean: true and false — usually used for conditional logic.
 
@@ -97,9 +103,14 @@ var - Global scope, discouraged in modern javascript. var keyword can redeclare 
 Note about const:
 const declarations only prevent reassignments — they don't prevent mutations of the variable's value, if it's an object.
 e.g. ->
-`const obj = {};
+
+```
+
+const obj = {};
 obj.a = 1; // no error
-console.log(obj); // { a: 1 }`
+console.log(obj); // { a: 1 }
+
+```
 
 Note about variables:
 If you declare a variable without assigning any value to it, its value is undefined.
@@ -109,14 +120,18 @@ let and const declared variables still occupy the entire scope they are defined 
 and are in a region known as the temporal dead zone before the actual line of declaration.
 This has some interesting interactions with variable shadowing, which don't occur in other languages.
 
-`function foo(x, condition) {
-    if (condition) {
-        console.log(x);
-        const x = 2;
-        console.log(x);
-    }
+```
+
+function foo(x, condition) {
+if (condition) {
+console.log(x);
+const x = 2;
+console.log(x);
 }
-foo(1, true);`
+}
+foo(1, true);
+
+```
 
 In most other languages, this would log "1" and "2", because before the const x = 2 line,
 x should still refer to the parameter x in the upper scope. In JavaScript,
@@ -130,5 +145,51 @@ Values are assigned using =. Each binary operator also has a compound assignment
 such as += and -=, which extend out to x = x operator y.
 
 If you add a string to a number (or other value) everything is converted into a string first. This might trip you up:
-`"3" + 4 + 5; // "345"
-3 + 4 + "5"; // "75"`
+
+```
+
+"3" + 4 + 5; // "345"
+3 + 4 + "5"; // "75"
+
+```
+
+### comparisons
+
+Comparisons in JavaScript can be made using <, >, <= and >=, which work for both strings and numbers.
+For equality, the double-equals operator performs type coercion if you give it different types, with sometimes interesting results.
+On the other hand, the triple-equals operator does not attempt type coercion, and is usually preferred.
+
+```
+
+123 == "123"; // true
+1 == true; // true
+
+123 === "123"; // false
+1 === true; // false
+
+```
+
+The double-equals and triple-equals also have their inequality counterparts: != and !==.
+
+JavaScript also has bitwise operators and logical operators.
+Notably, logical operators don't work with boolean values only — they work by the "truthiness" of the value.
+
+```
+
+const a = 0 && "Hello"; // 0 because 0 is "falsy"
+const b = "Hello" || "world"; // "Hello" because both "Hello" and "world" are "truthy"
+
+```
+
+The && and || operators use short-circuit logic, which means whether they will execute their second operand is dependent on the first.
+This is useful for checking for null objects before accessing their attributes:
+
+```
+
+const name = o && o.getName();
+
+```
+
+```
+
+```
