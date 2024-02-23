@@ -182,3 +182,12 @@ This is useful for checking for null objects before accessing their attributes:
 ```javascript
 const name = o && o.getName();
 ```
+
+## Grammar
+
+JavaScript grammar is very similar to the C family. There are a few points worth mentioning:
+
+Identifiers can have Unicode characters, but they cannot be one of the reserved words.
+Comments are commonly // or /\* \*/, while many other scripting languages like Perl, Python, and Bash use #.
+Semicolons are optional in JavaScript — the language automatically inserts them when needed.
+However, there are certain caveats to watch out for, since unlike Python, semicolons are still part of the syntax.
