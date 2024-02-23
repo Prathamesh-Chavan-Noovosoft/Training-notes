@@ -191,3 +191,22 @@ Identifiers can have Unicode characters, but they cannot be one of the reserved 
 Comments are commonly // or /\* \*/, while many other scripting languages like Perl, Python, and Bash use #.
 Semicolons are optional in JavaScript — the language automatically inserts them when needed.
 However, there are certain caveats to watch out for, since unlike Python, semicolons are still part of the syntax.
+
+// Javascript Array Methods
+```javascript
+[3, 4, 5, 6].at(1); // 4
+[3, 4, 5, 6].pop(); // [3, 4, 5]
+[3, 4, 5, 6].push(7); // [3, 4, 5, 6, 7]
+[3, 4, 5, 6].fill(1); // [1, 1, 1, 1]
+[3, 4, 5, 6].join("-"); // 3-4-5-6
+[3, 4, 5, 6].shift(); // [4, 5, 6]
+[3, 4, 5, 6].reverse(); // [6, 5, 4, 3]
+[3, 4, 5, 6].unshift(1); // [1, 3, 4, 5, 6]
+[3, 4, 5, 6].includes(5); // true
+[3, 4, 5, 6].map((num) => num + 6); // [9, 10, 11, 12]
+[3, 4, 5, 6].find((num) => num > 4); // 5
+[3, 4, 5, 6].filter((num) => num > 4); // [5, 6]
+[3, 4, 5, 6].every((num) => num > 5); // false
+[3, 4, 5, 6].findeIndex((num) => num > 4); // 2
+[3, 4, 5, 6].reduce((acc, num) => acc + num, 0); // 18
+```
