@@ -192,7 +192,7 @@ Comments are commonly // or /\* \*/, while many other scripting languages like P
 Semicolons are optional in JavaScript — the language automatically inserts them when needed.
 However, there are certain caveats to watch out for, since unlike Python, semicolons are still part of the syntax.
 
-// Javascript Array Methods
+### Javascript Array Methods Cheatsheet
 ```javascript
 [3, 4, 5, 6].at(1); // 4
 [3, 4, 5, 6].pop(); // [3, 4, 5]
